@@ -1,5 +1,5 @@
-siteTitle = "Graphene"
-ga = "UA-12613282-7"
+siteTitle = "GraphQL Elixir"
+ga = "UA-xxxxx"
 
 [docs.quickstart]
 	name = "Quickstart"
@@ -10,16 +10,13 @@ ga = "UA-12613282-7"
 [docs.walkthrough]
 	name = "Walkthrough"
 	pages = [
-	  "/docs/interfaces/",
+		"/docs/basic-types/",
 	  "/docs/objecttypes/",
 	  "/docs/mutations/",
-	  "/docs/basic-types/",
-	  "/docs/relay/",
 	]
 
-[docs.django]
-	name = "Django"
+[docs.phoenix]
+	name = "Phoenix"
 	pages = [
-	  "/docs/django/tutorial/",
-	  "/docs/django/filtering/",
+	  "/docs/phoenix/tutorial/",
 	]

@@ -1,6 +1,6 @@
 ---
-title: Getting started
-description: A Quick guide to Graphene
+title: Getting Started
+description: A Quick guide to GraphQL Elixir
 ---
 
 # Getting started
@@ -10,43 +10,63 @@ Let's build a basic GraphQL schema from scratch.
 
 ## Requirements
 
-- Python (2.6.5+, 2.7, 3.2, 3.3, 3.4, 3.5, pypy)
-- Graphene (0.4+)
+- Elixir (1.1+)
 
 
-## Project setup
+## Installation
 
-```bash
-pip install graphene
+First, add GraphQL to your `mix.exs` dependencies:
+
+```elixir
+defp deps do
+  [{:graphql, "~> 0.1.1"}]
+end
 ```
 
-## Creating a basic Schema
+Add GraphQL to your `mix.exs` applications:
 
-A GraphQL schema describes your data model, and provides a GraphQL server with an associated set of resolve methods that know how to fetch data.
-
-We are going to create a very simple schema, with a `Query` with only one field: `hello`. And when we query it should return `"World"`.
-
-
-```python
-import graphene
-
-class Query(graphene.ObjectType):
-    hello = graphene.String()
-
-    def resolve_hello(self, args, info):
-        return 'World'
-
-schema = graphene.Schema(query=Query)
+```elixir
+def application do
+  # Add the application to your list of applications.
+  # This will ensure that it will be included in a release.
+  [applications: [:logger, :graphql]]
+end
 ```
 
+Then, update your dependencies:
 
-## Querying
-
-Then, we can start querying our schema:
-
-```python
-result = schema.execute('{ hello }')
-print result.data['hello'] # "World"
+```sh-session
+$ mix deps.get
 ```
 
-Congrats! You got your first graphene schema working!
+## Usage
+
+First setup your schema
+
+```elixir
+defmodule TestSchema do
+  def schema do
+    %GraphQL.Schema{
+      query: %GraphQL.Type.ObjectType{
+        name: "RootQueryType",
+        fields: %{
+          greeting: %{
+            type: %GraphQL.Type.String{},
+            resolve: {TestSchema, :greeting}
+          }
+        }
+      }
+    }
+  end
+
+  def greeting(_, %{name: name}, _), do: "Hello, #{name}!"
+  def greeting(_, _, _), do: "Hello, world!"
+end
+```
+
+Execute a simple GraphQL query
+
+```elixir
+iex> GraphQL.execute(TestSchema.schema, "{greeting}")
+{:ok, %{greeting: "Hello, world!"}}
+```

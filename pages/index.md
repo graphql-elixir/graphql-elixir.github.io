@@ -1,10 +1,12 @@
 ---
 path: /
 ---
-<div class="starwars-example-wrapper"><a class="starwars-example" href="http://swapi.graphene-python.org/">Check our Django Starwars API example!</a></div>
+<div class="starwars-example-wrapper"><a class="starwars-example" href="http://hello-graphql-phoenix.herokuapp.com/">Check our Phoenix API examples!</a></div>
 
-## Meet Graphene
+## Meet GraphQL Elixir
 
-Graphene is a Python library for building GraphQL schemas/types fast and easily.
+GraphQL Elixir is an Elixir library for building and serving GraphQL APIs quickly and easily.
 
-**But, what is GraphQL?** A GraphQL query is a string interpreted by a server that returns data in a specified format. We believe *GraphQL* is the next big thing after peanut butter and *REST*.
+**What is GraphQL?**
+GraphQL describes a way of building fluid, single endpoint APIs quickly.
+We believe *GraphQL* is going to change how you think about *REST* APIs.

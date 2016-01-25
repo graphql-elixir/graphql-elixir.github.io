@@ -1,6 +1,6 @@
 ---
 title: Introspection Schema
-description: A guide to instrospection schema in Django
+description: A guide to introspecting schemas
 ---
 
 # Introspection Schema

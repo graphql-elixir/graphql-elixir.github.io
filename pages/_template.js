@@ -17,26 +17,26 @@ class Template extends React.Component {
             <span><Link to="/playground/" className={path.indexOf('/playground')==0?"active":null}>Try it out</Link></span>
             <span><Link to="/docs/quickstart/" className={path.indexOf('/docs')==0?"active":null}>Docs</Link></span>
             <span><Link to="/community/">Community</Link></span>
-            <a href="https://github.com/graphql-python/graphene/">Github</a>
+            <a href="https://github.com/joshprice/graphql-elixir">Github</a>
         </Menu>
         <header className="header">
             <div className="header-wrapper">
                 <Link className="header-logo" to="/">
                     <Icon src={logo} />
-                    Graphene
+                    GraphQL Elixir
                 </Link>
                 <nav className="header-nav">
                     <Link to="/playground/" className={path.indexOf('/playground')==0?"active":null}>Try it out</Link>
                     <Link to="/docs/quickstart/" className={path.indexOf('/docs')==0?"active":null}>Docs</Link>
                     <Link to="/community/">Community</Link>
-                    <a href="https://github.com/graphql-python/graphene/">Github</a>
+                    <a href="https://github.com/joshprice/graphql-elixir">Github</a>
                 </nav>
             </div>
             {isIndex?
             <div className="header-extended">
                 <h1>
-                    GraphQL in Python<br />
-                    made <strong>simple</strong>
+                  GraphQL in Elixir<br />
+                <strong>simple</strong>, <strong>scalable</strong>, <strong>blazing fast</strong>
                 </h1>
                 <Link to="/docs/quickstart/" className="get-started">Get Started</Link>
                 <Header />

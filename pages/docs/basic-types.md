@@ -5,23 +5,23 @@ description: Walkthrough Basic Types
 
 # Basic Types
 
-Graphene define the following base Scalar Types:
-- `graphene.String`
-- `graphene.Int`
-- `graphene.Float`
-- `graphene.Boolean`
-- `graphene.ID`
+GraphQL Elixir define the following base Scalar Types:
+- `GraphQL.Type.String`
+- `GraphQL.Type.Int`
+- `GraphQL.Type.Float`
+- `GraphQL.Type.Boolean`
+- `GraphQL.Type.ID`
 
 Also the following Types are available:
-- `graphene.List`
-- `graphene.NonNull`
+- `GraphQL.Type.List`
+- `GraphQL.Type.NonNull`
+- `GraphQL.Type.JSON`
 
-## Shorcuts
+## Shortcuts
 
-There are some shorcuts for code easier.
-The following are equivalent
+There are some shortcuts for simplifying your schema.
 
-```python
+```elixir
 # A list of strings
 string_list = graphene.List(graphene.String())
 string_list = graphene.String().List
@@ -35,68 +35,19 @@ string_non_null = graphene.NonNull(graphene.String())
 ## Custom scalars
 
 You can also create a custom scalar for your schema.
-If you want to create a DateTime Scalar Type just type:
+Add a custom Scalar Type as follows:
 
-```python
-import datetime
-from graphql.core.language import ast
+```elixir
+defmodule GraphQL.Type.CustomType do
+  defstruct name: "CustomType", description:
+    """
+    CustomType description
+    """
 
-class DateTime(Scalar):
-    '''DateTime'''
-    @staticmethod
-    def serialize(dt):
-        return dt.isoformat()
+  def coerce(value), do: <...>
+end
 
-    @staticmethod
-    def parse_literal(node):
-        if isinstance(node, ast.StringValue):
-            return datetime.datetime.strptime(
-                node.value, "%Y-%m-%dT%H:%M:%S.%f")
-
-    @staticmethod
-    def parse_value(value):
-        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-```
-
-## Mounting in ClassTypes
-
-This types if are mounted in a `ObjectType`, `Interface` or `Mutation`,
- would act as `Field`s.
-
-```python
-class Person(graphene.ObjectType):
-    name = graphene.String()
-
-# Is equivalent to:
-class Person(graphene.ObjectType):
-    name = graphene.Field(graphene.String())
-```
-
-## Mounting in Fields
-
-If the types are mounted in a `Field`, would act as `Argument`s.
-
-```python
-graphene.Field(graphene.String(), to=graphene.String())
-
-# Is equivalent to:
-graphene.Field(graphene.String(), to=graphene.Argument(graphene.String()))
-```
-
-
-## Using custom object types as argument
-
-To use a custom object type as an argument, you need to inherit `graphene.InputObjectType`, not `graphene.ObjectType`.
-
-```python
-class CustomArgumentObjectType(graphene.InputObjectType):
-    field1 = graphene.String()
-    field2 = graphene.String()
-
-```
-
-Then, when defining this in an argument, you need to wrap it in an `Argument` object.
-
-```python
-graphene.Field(graphene.String(), to=graphene.Argument(CustomArgumentObjectType))
-```
+defimpl GraphQL.Types, for: GraphQL.Type.CustomType do
+  def parse_value(_, value), do: <...>
+  def serialize(_, value), do: <...>
+end```

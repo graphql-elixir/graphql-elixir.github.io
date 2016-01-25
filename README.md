@@ -1,6 +1,6 @@
-# Graphene Docs
+# GrapQL Elixir Docs
 
-Graphene docs are powered by [gatsby](https://github.com/gatsbyjs/gatsby).
+GraphQL Elixir docs are powered by [gatsby](https://github.com/gatsbyjs/gatsby).
 
 
 ## Installation
