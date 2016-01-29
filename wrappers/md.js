@@ -2,7 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { link } from 'gatsby-helpers';
 
-var DOCS_BASEURL = "https://github.com/graphql-elixir/graphql-elixir-docs/edit/master/docs/pages/";
+var DOCS_BASEURL = "https://github.com/graphql-elixir/graphql-elixir-web/edit/source/pages/";
 
 class Markdown extends React.Component {
   render() {

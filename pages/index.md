@@ -1,7 +1,7 @@
 ---
 path: /
 ---
-<div class="starwars-example-wrapper"><a class="starwars-example" href="http://hello-graphql-phoenix.herokuapp.com/">Check our Phoenix API examples!</a></div>
+<div class="starwars-example-wrapper"><a class="starwars-example" href="http://playground.graphql-elixir.org/">Check our Phoenix API examples!</a></div>
 
 ## Meet GraphQL Elixir
 

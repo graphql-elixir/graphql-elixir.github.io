@@ -7,16 +7,15 @@ ga = "UA-xxxxx"
 	  "/docs/quickstart/",
 	]
 
-[docs.walkthrough]
-	name = "Walkthrough"
-	pages = [
-		"/docs/basic-types/",
-	  "/docs/objecttypes/",
-	  "/docs/mutations/",
-	]
+# [docs.walkthrough]
+# 	name = "Walkthrough"
+# 	pages = [
+# 		"/docs/basic-types/",
+# 	  "/docs/objecttypes/",
+# 	]
 
-[docs.phoenix]
-	name = "Phoenix"
-	pages = [
-	  "/docs/phoenix/tutorial/",
-	]
+# [docs.phoenix]
+# 	name = "Phoenix"
+# 	pages = [
+# 	  "/docs/phoenix/tutorial/",
+# 	]
