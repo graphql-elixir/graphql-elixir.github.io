@@ -2,7 +2,7 @@
 if (typeof window === "undefined") {
   var ServerReactRootIndex = require('react/lib/ServerReactRootIndex');
   ServerReactRootIndex.createReactRootIndex = function(){
-      return "graphene";
+      return "graphql-elixir";
   };
 }
 
