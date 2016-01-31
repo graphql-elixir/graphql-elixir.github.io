@@ -5,7 +5,7 @@ description: Walkthrough Basic Types
 
 # Basic Types
 
-GraphQL Elixir define the following base Scalar Types:
+GraphQL Elixir defines the following base Scalar Types:
 - `GraphQL.Type.String`
 - `GraphQL.Type.Int`
 - `GraphQL.Type.Float`
@@ -13,23 +13,10 @@ GraphQL Elixir define the following base Scalar Types:
 - `GraphQL.Type.ID`
 
 Also the following Types are available:
+- `GraphQL.Type.ObjectType`
 - `GraphQL.Type.List`
 - `GraphQL.Type.NonNull`
 - `GraphQL.Type.JSON`
-
-## Shortcuts
-
-There are some shortcuts for simplifying your schema.
-
-```elixir
-# A list of strings
-string_list = graphene.List(graphene.String())
-string_list = graphene.String().List
-
-# A non-null string
-string_non_null = graphene.String().NonNull
-string_non_null = graphene.NonNull(graphene.String())
-```
 
 
 ## Custom scalars
