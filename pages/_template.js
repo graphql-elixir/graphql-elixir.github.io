@@ -13,7 +13,7 @@ class Template extends React.Component {
     var isIndex = path == '/';
     return (
       <div>
-        <Menu width={200} right>
+        <Menu width={200}>
             <a href="http://playground.graphql-elixir.org">Try it out</a>
             <span><Link to="/docs/quickstart/" className={path.indexOf('/docs')==0?"active":null}>Docs</Link></span>
             <span><Link to="/community/">Community</Link></span>
