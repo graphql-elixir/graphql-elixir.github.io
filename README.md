@@ -16,28 +16,51 @@ And then
 gatsby develop
 ```
 
-## Playground
-
-If you want to have the playground running too, just execute
-
-```
-./playground/graphene-js/build.sh
-```
-
-This command will clone the [pypyjs-release-nojit](https://github.com/pypyjs/pypyjs-release-nojit) repo, update it with the latest graphene, graphql-core and graphql-relay code, and make it available for the `/playground` view in the docs.
-
-
 ## Build
 
 For building the docs into the `public` dir, just run:
 
 ```bash
-npm run build
+npm deploy
 ```
 
+## Deploying to the web
+
+This repo is setup as an organisation github pages repo. This means the source material is in the `source` branch and the website is updated from `master`.
+
+To publish manually you need to run the following:
+
+```bash
+# generate html from source files and
+git checkout source
+npm deploy
+git add .
+git commit -m"Deploy"
+
+# pull the build dir from the source branch into master branch
+git checkout master
+git checkout source build
+
+# copy to root dir
+cp -vR public/* .
+
+# delete public dir
+rm -rf public
+
+# commit and pushing to master will deploy
+git add .
+git commit -m"Deploy latest"
+git push
+```
+
+Bit convoluted but will automate.
 
 ## Automation
 
-Thanks to [Travis](https://github.com/graphql-python/graphene/blob/master/.travis.yml#L39-L58), we automated the way documentation is updated in the `gh-pages` branch.
+Might automate this in a similar fashion to:
 
-Each time we modify the docs in the `master` branch the travis job runs and updates the `gh-pages` branch with the latest code, so [Graphene's website](http://graphene-python.org) have always the latest docs.
+https://github.com/graphql-python/graphene/blob/master/.travis.yml#L39-L58
+
+## Thanks
+
+Thanks to the [Graphene Python](https://github.com/graphql-python/graphene/tree/master/docs) team for their great looking site on which this is heavily based.
