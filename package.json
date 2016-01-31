@@ -1,5 +1,5 @@
 {
-  "name": "graphql-elixir-docs",
+  "name": "graphql-elixir-web",
   "version": "1.0.0",
   "description": "GraphQL Elixir docs",
   "main": "n/a",
@@ -33,5 +33,8 @@
     "stylus-loader": "^1.4.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
+  },
+  "devDependencies": {
+    "imports-loader": "^0.6.5"
   }
 }
