@@ -11,7 +11,7 @@ If you think working with GraphQL is fun, there are many ways you can contribute
 
 [![Public Slack Discussion](https://graphql-slack.herokuapp.com/badge.svg)](https://graphql-slack.herokuapp.com/)
 
-## Our Repositories
+## Repositories
 
 -   **GraphQL Core**: [Source Code] - [Hex package]
 
