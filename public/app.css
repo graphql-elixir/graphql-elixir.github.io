@@ -354,12 +354,12 @@ body {
   zoom: 1;
   position: relative;
   text-align: center;
-  background: #db594c;
-  background-image: -webkit-radial-gradient(95% 101%, #e46643 5%, rgba(226,91,72,0) 100%);
-  background-image: -moz-radial-gradient(95% 101%, #e46643 5%, rgba(226,91,72,0) 100%);
-  background-image: -o-radial-gradient(95% 101%, #e46643 5%, rgba(226,91,72,0) 100%);
-  background-image: -ms-radial-gradient(95% 101%, #e46643 5%, rgba(226,91,72,0) 100%);
-  background-image: radial-gradient(95% 101%, #e46643 5%, rgba(226,91,72,0) 100%);
+  background: #4e2a8e;
+  background-image: -webkit-radial-gradient(95% 101%, #4e2aae 5%, rgba(226,91,72,0) 100%);
+  background-image: -moz-radial-gradient(95% 101%, #4e2aae 5%, rgba(226,91,72,0) 100%);
+  background-image: -o-radial-gradient(95% 101%, #4e2aae 5%, rgba(226,91,72,0) 100%);
+  background-image: -ms-radial-gradient(95% 101%, #4e2aae 5%, rgba(226,91,72,0) 100%);
+  background-image: radial-gradient(95% 101%, #4e2aae 5%, rgba(226,91,72,0) 100%);
 }
 .header:before,
 .header:after {
