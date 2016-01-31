@@ -444,21 +444,16 @@ body {
   bottom: -24px;
 }
 @media only screen and (max-width: 600px) {
-  .header-nav {
-    display: none;
+  .header-nav a {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0 7px;
   }
 }
 .bm-burger-button,
 .bm-menu-wrap,
 .bm-overlay {
   display: none;
-}
-@media only screen and (max-width: 600px) {
-  .bm-burger-button,
-  .bm-menu-wrap,
-  .bm-overlay {
-    display: block;
-  }
 }
 .bm-burger-button {
   z-index: 300 !important;
